@@ -190,6 +190,8 @@ def get_avail_powersave():
 
 
 def get_avail_performance():
+    if "ondemand" in get_avail_gov():
+        return "ondemand"
     for g in ALL_GOVERNORS:
         if g in get_avail_gov():
             return g
